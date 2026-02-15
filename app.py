@@ -45,10 +45,14 @@ if uploaded_file is not None:
     st.write("Preview of Uploaded Data:")
     st.dataframe(data.head())
 
-    X = data.drop(columns=['Student_ID', 'placement_status', 'salary_lpa'])
+    columns_to_drop = ['Student_ID', 'placement_status', 'salary_lpa']
+
+    X = data.drop(columns=[col for col in columns_to_drop if col in data.columns])
+
+    # X = data.drop(columns=['Student_ID', 'placement_status', 'salary_lpa'])
 
     # Assuming target column is named 'target'
-    X = data.drop("placement_status", axis=1)
+    # X = data.drop("placement_status", axis=1)
     y = data["placement_status"]
 
 
