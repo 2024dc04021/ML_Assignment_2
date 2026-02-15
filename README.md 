@@ -1,0 +1,74 @@
+# Placement Prediction using Machine Learning
+
+## Problem Statement
+
+The objective of this project is to predict whether an engineering student will get placed based on academic performance, technical skills, and related factors. Multiple classification models were implemented and compared to evaluate their performance.
+
+---
+
+## Dataset Description
+
+The dataset contains synthetically generated data representing engineering students from Indian colleges. Each row corresponds to a student and includes academic scores, skill ratings, internships, lifestyle factors, and placement outcome.
+
+### Key Features:
+- CGPA  
+- 10th and 12th percentage  
+- Coding, communication, and aptitude skill ratings  
+- Internships and projects completed  
+- Hackathons participated  
+- Certifications count  
+- Sleep hours and stress level  
+- Placement status and salary  
+
+This dataset is synthetic and created for learning purposes.
+
+Dataset Source:  
+https://www.kaggle.com/datasets/vishardmehta/indian-engineering-college-placement-dataset/data
+
+---
+
+## Models Used
+
+The following classification models were trained and evaluated:
+
+- Logistic Regression  
+- Decision Tree  
+- k-Nearest Neighbors (kNN)  
+- Naive Bayes  
+- Random Forest (Ensemble)  
+- XGBoost (Ensemble)
+
+---
+
+## Model Comparison
+
+| ML Model Name | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
+|---------------|----------|------|-----------|--------|----------|------|
+| Logistic Regression | 0.891 | 0.907 | 0.919 | 0.958 | 0.938 | 0.491 |
+| Decision Tree | 0.888 | 0.666 | 0.908 | 0.969 | 0.937 | 0.448 |
+| kNN | 0.875 | 0.834 | 0.905 | 0.956 | 0.929 | 0.394 |
+| Naive Bayes | 0.818 | 0.876 | 0.962 | 0.821 | 0.886 | 0.484 |
+| Random Forest (Ensemble) | 0.888 | 0.885 | 0.908 | 0.969 | 0.937 | 0.448 |
+| XGBoost (Ensemble) | 0.879 | 0.886 | 0.919 | 0.943 | 0.931 | 0.456 |
+
+---
+
+## Observations
+
+**Logistic Regression** achieved the highest AUC and MCC, indicating strong class separation and balanced performance.
+
+**Decision Tree** showed high recall but lower AUC, suggesting weaker discrimination between classes.
+
+**kNN** performed reasonably well but had the lowest MCC, indicating less balanced predictions.
+
+**Naive Bayes** had the lowest accuracy but high precision and strong MCC, showing fewer false positives but lower recall.
+
+**Random Forest** demonstrated strong recall and stable ensemble performance.
+
+**XGBoost** delivered balanced results across all metrics and performed close to Random Forest.
+
+---
+
+## Conclusion
+
+Based on AUC and MCC, Logistic Regression demonstrated the strongest overall performance on this dataset. Ensemble models also performed well but did not significantly outperform the simpler linear model.
