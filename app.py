@@ -10,14 +10,28 @@ st.title("Placement Prediction App")
 # -------------------------
 # Load Models
 # -------------------------
-models = {
-    "Decision Tree":  joblib.load("models/decision_tree.pkl"),
-    "Gaussian Naive Bayes":  joblib.load("models/gaussian_n_b.pkl"),
-    "K-Nearest Neighbor":  joblib.load("models/knn.pkl"),
-    "Logistic Regression": joblib.load("models/logistic.pkl"),
-    "Random Forest": joblib.load("models/random_forest.pkl"),
-    "XGBoost": joblib.load("models/xgboost.pkl")
-}
+# models = {
+#     "Decision Tree":  joblib.load("models/decision_tree.pkl"),
+#     "Gaussian Naive Bayes":  joblib.load("models/gaussian_n_b.pkl"),
+#     "K-Nearest Neighbor":  joblib.load("models/knn.pkl"),
+#     "Logistic Regression": joblib.load("models/logistic.pkl"),
+#     "Random Forest": joblib.load("models/random_forest.pkl"),
+#     "XGBoost": joblib.load("models/xgboost.pkl")
+# }
+
+try:
+    models =  {
+        "Decision Tree":  joblib.load("models/decision_tree.pkl"),
+        "Gaussian Naive Bayes":  joblib.load("models/gaussian_n_b.pkl"),
+        "K-Nearest Neighbor":  joblib.load("models/knn.pkl"),
+        "Logistic Regression": joblib.load("models/logistic.pkl"),
+        "Random Forest": joblib.load("models/random_forest.pkl"),
+        "XGBoost": joblib.load("models/xgboost.pkl")
+    }
+    st.success("Model Loaded Successfully")
+except Exception as e:
+    st.error(f"Model failed to load: {e}")
+    st.stop()
 
 # -------------------------
 # a. Dataset Upload Option
