@@ -31,9 +31,12 @@ if uploaded_file is not None:
     st.write("Preview of Uploaded Data:")
     st.dataframe(data.head())
 
+    X = data.drop(columns=['Student_ID', 'placement_status', 'salary_lpa'])
+
     # Assuming target column is named 'target'
     X = data.drop("placement_status", axis=1)
     y = data["placement_status"]
+
 
     # -------------------------
     # b. Model Selection Dropdown
