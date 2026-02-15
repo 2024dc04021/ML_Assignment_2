@@ -53,7 +53,8 @@ if uploaded_file is not None:
 
     # Assuming target column is named 'target'
     # X = data.drop("placement_status", axis=1)
-    y = data["placement_status"]
+    y = data['placement_status'].apply(lambda x: 1 if x == 'Placed' else 0)
+
 
 
     # -------------------------
